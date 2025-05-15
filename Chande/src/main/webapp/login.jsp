@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,8 +40,7 @@ if (status == "failed") {
 						<figure>
 							<img src="images/signin-image.jpg" alt="sing up image">
 						</figure>
-						<a href="registration.jsp" class="signup-image-link">Create an
-							account</a>
+						<a href="registration.jsp" class="signup-image-link">Create an account</a>
 					</div>
 
 					<div class="signin-form">

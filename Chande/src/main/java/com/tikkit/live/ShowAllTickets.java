@@ -7,17 +7,18 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/ShowAllTickets")
 public class ShowAllTickets extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    @Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // Set response content type
         response.setContentType("text/html");
@@ -28,7 +29,7 @@ public class ShowAllTickets extends HttpServlet {
         Connection con = null;
         try {
         	Class.forName("com.mysql.cj.jdbc.Driver");
-        	con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ticket_db?useSSL=false", "chandu", "admin");
+        	con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/ticket_db?useSSL=false", "root", "");
 
         	PreparedStatement pst = con.prepareStatement("SELECT * FROM tickets");
         	ResultSet rs = pst.executeQuery();

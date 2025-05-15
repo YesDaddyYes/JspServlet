@@ -1,10 +1,12 @@
-<%
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ 
+    <%
 	if (session.getAttribute("name") == null) {
 		response.sendRedirect("login.jsp");
 	}
 %>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +36,7 @@
             </div>
           </div>
           <div class="flex px-4 text-white mt-5 gap-3">
-            <a href="/Chande.jsp" class="bg-red-600 p-2 px-4 rounded-full cursor-pointer">Train Ticket</a>
+            <a href="/Chande/train.jsp" class="bg-red-600 p-2 px-4 rounded-full cursor-pointer">Train Ticket</a>
             <a href="/Chande/plane.jsp" class="bg-red-600 p-2 px-4 rounded-full cursor-pointer">Plane Ticket</a>
             <a href="/Chande/ship.jsp" class="bg-red-600 p-2 px-4 rounded-full cursor-pointer">Ship Ticket</a>
           </div>
